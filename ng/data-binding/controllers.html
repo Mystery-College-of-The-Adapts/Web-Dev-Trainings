@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Controllers </title>
+  <script src="../../node_modules/angular/angular.min.js"></script>
+  <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+
+
+
+</head>
+
+<body ng-app="app">
+
+  <div ng-controller="FirstController">
+    <h4>The Simplest adding machine ever</h4>
+    <button ng-click="add(1)" class="btn btn-primary">Add</button>
+    <button ng-click="subtract(1)" class="btn btn-danger">Subtract</button>
+    <h5>Current Count: {{ counter }}</h5>
+  </div>
+
+  <div ng-controller="MyController">
+    <h1> {{ person }}</h1>
+    and their name:
+    <h3> {{ person.name }}</h3>
+  </div>
+
+  <div ng-controller="ParentController">
+    <div ng-controller="ChildController">
+      <button class="btn btn-primary" ng-click="sayHello()">say Hello </button>
+    </div>
+    {{ person }}
+  </div>
+<script src="app.js">
+</script>
+
+</body>
+</html>
