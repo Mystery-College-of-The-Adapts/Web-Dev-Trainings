@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Controllers </title>
+  <script src="../../node_modules/angular/angular.min.js"></script>
+  <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+
+
+
+</head>
+
+<body ng-app="app">
+  <div ng-controller="MyController">
+    <input ng-model="expr" type="text" placeholder="Enter an expression" />
+    <h2> {{parsedValue}}</h2>
+  </div>
+<script src="app.js">
+</script>
+
+</body>
+</html>
