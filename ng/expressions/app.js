@@ -1,5 +1,5 @@
 angular
-  .module('app', [])
+  .module('app', ['emailParser'])
   .controller('MyController',
   function($scope, $parse) {
     $scope.$watch('expr', function(newVal, olVal, scope) {
@@ -13,12 +13,14 @@ angular
     });
   })
 
-  .controller('NewController',
-  function($scope, $interpolate) {
+  .controller('NewController', ['$scope', 'EmailParser',
+  function($scope, EmailParser) {
     $scope.$watch('emailBody', function(body) {
       if(body) {
-        var template = $interpolate(body);
-        $scope.previewText = template({to: $scope.to});
+        $scope.previewText = EmailParser.parse(body, {
+          to: $scope.to
+        });
+        
       }
     });
-  });
+  }]);
