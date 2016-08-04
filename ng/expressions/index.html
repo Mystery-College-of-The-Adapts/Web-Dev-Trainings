@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title> Controllers </title>
-  <script src="../../node_modules/angular/angular.min.js"></script>
-  <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <head>
+        <title>
+            Controllers
+        </title>
+        <script src="../../node_modules/angular/angular.min.js"></script>
+        <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../../node_modules/jquery/dist/jquery.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
 
+    </head>
 
-
-</head>
-
-<body ng-app="app">
-  <div ng-controller="MyController">
+    <body ng-app="app">
+        <!--<div ng-controller="MyController">
     <input ng-model="expr" type="text" placeholder="Enter an expression" />
     <h2> {{parsedValue}}</h2>
-  </div>
+  </div>-->
 
-  <div ng-controller="NewController">
-    <input ng-model="to" type="email" placeholder="Recipient" />
+        <div ng-controller="NewController">
+            <!--<input ng-model="to" type="email" placeholder="Recipient" />
     <textarea ng-model="emailBody"></textarea>
     <pre>
       {{ previewText }}
-    </pre>
-  </div>
-<script src="app.js"></script>
-<script src="module.js"></script>
+    </pre>-->
 
-</body>
+            <div id="emailEditor">
+                To:<input ng-model="to" type="email" placeholder="Recipient"/><br />
+                Email Body: <textarea ng-model="emailBody"></textarea>
+            </div>
+            <div id="emailPreview">
+                <pre>__ previewText __</pre>
+            </div>
+        </div>
+        <script src="app.js"></script>
+        <script src="module.js"></script>
+
+    </body>
 </html>
